@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import API_BASE_URL from '../config'; // Import the base URL
 
 const MatchHistory = ({ puuid }) => {
   const [matches, setMatches] = useState([]);
@@ -8,7 +9,7 @@ const MatchHistory = ({ puuid }) => {
   useEffect(() => {
     const fetchMatchHistory = async () => {
       try {
-        const response = await axios.get(`/api/match-history/${puuid}`);
+        const response = await axios.get(`${API_BASE_URL}/api/match-history/${puuid}`);
         setMatches(response.data);
       } catch (err) {
         setError(err.response?.data?.error || 'Failed to fetch match history.');
@@ -18,18 +19,16 @@ const MatchHistory = ({ puuid }) => {
   }, [puuid]);
 
   if (error) return <div className="error">{error}</div>;
-  if (!matches.length) return <p>Loading match history...</p>;
+  if (!matches.length) return <p>No match history available.</p>;
 
   return (
     <div>
       <h3>Match History</h3>
-      <ul>
-        {matches.map((match, index) => (
-          <li key={index}>
-            Match ID: {match.metadata.matchId} - Game Mode: {match.info.gameMode}
-          </li>
-        ))}
-      </ul>
+      {matches.map((match, index) => (
+        <div key={index}>
+          <p>Match {index + 1}: {match.metadata?.matchId || 'Unknown Match'}</p>
+        </div>
+      ))}
     </div>
   );
 };
