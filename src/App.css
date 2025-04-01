@@ -1,38 +1,210 @@
 .App {
   text-align: center;
+  background: #0F1626; /* Dark blue background */
+  height: 100vh;
+  width: 100vw;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  position: relative;
+  color: #FFD700; /* Gold text color */
+  font-family: 'Arial', sans-serif; /* Replace with BeaufortforLOL if available */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('assets/fonts/BeaufortforLOL-Light.ttf') format('truetype'); /* For public folder */
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Remove the background video and overlay */
+.App::before {
+  display: none; /* Remove the overlay */
 }
 
-.App-header {
-  background-color: #282c34;
+.App > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Remove the small window styling */
+.container {
+  background: none;
+  opacity: 1;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+  max-width: none;
+  color: #FFD700;
+}
+
+/* Style the home page */
+.home-page {
+  width: 100%;
   min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Ensure the hamburger menu stays in the top-left */
+.hamburger-menu {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.menu {
+  background: #0F1626;
+  border: 1px solid #FFD700;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.menu-item {
+  color: #FFD700;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: #1A2A4A;
+}
+
+/* New style for logout item */
+.logout-item {
+  color: #FF5555; /* Red color to distinguish logout */
+  padding: 5px;
+  cursor: pointer;
+}
+
+.logout-item:hover {
+  background: #4A1A1A; /* Dark red background on hover */
+}
+
+/* Style the profile section */
+.profile-section {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 60px 0 20px; /* Add margin to avoid overlap with hamburger menu */
+}
+
+.profile-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #FFD700;
+  margin-right: 15px;
+}
+
+/* Style the content section */
+.content-section {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Existing styles for other components */
+.error {
+  color: red;
+  margin: 10px 0;
+}
+
+.champions-section {
+  margin-top: 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center; /* Centers the input horizontally */
+  align-items: center; /* Centers items vertically */
+  margin-bottom: 20px; /* Adds spacing below */
+}
+
+.search-box {
+  width: 50%; /* Adjust width as needed */
+  max-width: 400px; /* Optional: prevents it from becoming too wide */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center; /* Centers text inside the input */
+  font-size: 16px;
+}
+
+.clear-search {
+  margin-left: 10px;
+  padding: 10px;
+  background: #FFD700;
+  color: #0F1626;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clear-search:hover {
+  background: #E6C200;
+}
+
+.champions-section {
+  padding: 20px;
+}
+
+.champion-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.champion-item {
+  width: 120px;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.completed {
+  background-color: #d4edda; /* Light green for completed champs */
+}
+
+.champion-name {
+  color: #FFD700;
+  font-size: 14px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.champion-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #FFD700;
+  margin-bottom: 5px; /* Space between image and checkbox */
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.custom-checkbox.checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.checkmark {
+  font-size: 16px;
   color: white;
+  text-align: center;
+  line-height: 20px;
+  display: block;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Remove the old champion-label styles */
+.champion-label {
+  display: none; /* No longer needed */
 }
