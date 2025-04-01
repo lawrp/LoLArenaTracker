@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/LoLArenaTracker/static/css/main.3817e17f.css",
-    "main.js": "/LoLArenaTracker/static/js/main.e1972ab8.js",
+    "main.js": "/LoLArenaTracker/static/js/main.c51fcd6b.js",
     "static/js/453.72cc0730.chunk.js": "/LoLArenaTracker/static/js/453.72cc0730.chunk.js",
     "static/media/BeaufortforLOL-Light.ttf": "/LoLArenaTracker/static/media/BeaufortforLOL-Light.f53587e02456019e51e5.ttf",
     "index.html": "/LoLArenaTracker/index.html",
     "main.3817e17f.css.map": "/LoLArenaTracker/static/css/main.3817e17f.css.map",
-    "main.e1972ab8.js.map": "/LoLArenaTracker/static/js/main.e1972ab8.js.map",
+    "main.c51fcd6b.js.map": "/LoLArenaTracker/static/js/main.c51fcd6b.js.map",
     "453.72cc0730.chunk.js.map": "/LoLArenaTracker/static/js/453.72cc0730.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3817e17f.css",
-    "static/js/main.e1972ab8.js"
+    "static/js/main.c51fcd6b.js"
   ]
 }
