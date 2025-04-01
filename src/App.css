@@ -1,12 +1,12 @@
 .App {
   text-align: center;
-  background: #0F1626; /* Dark blue background */
+  background: #0F1626; 
   height: 100vh;
   width: 100vw;
-  overflow-y: auto; /* Allow scrolling if content overflows */
+  overflow-y: auto; 
   position: relative;
-  color: #FFD700; /* Gold text color */
-  font-family: 'Arial', sans-serif; /* Replace with BeaufortforLOL if available */
+  color: #FFD700; 
+  font-family: 'Arial', sans-serif; 
 }
 
 @font-face {
@@ -16,9 +16,8 @@
   font-style: normal;
 }
 
-/* Remove the background video and overlay */
 .App::before {
-  display: none; /* Remove the overlay */
+  display: none;
 }
 
 .App > * {
@@ -26,7 +25,7 @@
   z-index: 2;
 }
 
-/* Remove the small window styling */
+
 .container {
   background: none;
   opacity: 1;
@@ -37,7 +36,7 @@
   color: #FFD700;
 }
 
-/* Style the home page */
+
 .home-page {
   width: 100%;
   min-height: 100vh;
@@ -45,7 +44,7 @@
   box-sizing: border-box;
 }
 
-/* Ensure the hamburger menu stays in the top-left */
+
 .hamburger-menu {
   position: absolute;
   top: 20px;
@@ -69,23 +68,23 @@
   background: #1A2A4A;
 }
 
-/* New style for logout item */
+
 .logout-item {
-  color: #FF5555; /* Red color to distinguish logout */
+  color: #FF5555; 
   padding: 5px;
   cursor: pointer;
 }
 
 .logout-item:hover {
-  background: #4A1A1A; /* Dark red background on hover */
+  background: #4A1A1A;
 }
 
-/* Style the profile section */
+
 .profile-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 60px 0 20px; /* Add margin to avoid overlap with hamburger menu */
+  margin: 60px 0 20px; 
 }
 
 .profile-icon {
@@ -96,14 +95,13 @@
   margin-right: 15px;
 }
 
-/* Style the content section */
+
 .content-section {
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
 }
 
-/* Existing styles for other components */
 .error {
   color: red;
   margin: 10px 0;
@@ -115,18 +113,18 @@
 
 .search-container {
   display: flex;
-  justify-content: center; /* Centers the input horizontally */
-  align-items: center; /* Centers items vertically */
-  margin-bottom: 20px; /* Adds spacing below */
+  justify-content: center; 
+  align-items: center; 
+  margin-bottom: 20px; 
 }
 
 .search-box {
-  width: 50%; /* Adjust width as needed */
-  max-width: 400px; /* Optional: prevents it from becoming too wide */
+  width: 50%; 
+  max-width: 400px; 
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  text-align: center; /* Centers text inside the input */
+  text-align: center; 
   font-size: 16px;
 }
 
@@ -204,7 +202,6 @@
   display: block;
 }
 
-/* Remove the old champion-label styles */
 .champion-label {
-  display: none; /* No longer needed */
+  display: none; 
 }

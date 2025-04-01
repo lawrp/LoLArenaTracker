@@ -1,7 +1,9 @@
 {
-  "name": "frontend",
+  "name": "lolarenatracker",
+  "homepage": "https://your-username.github.io/LoLArenaTracker",
   "version": "0.1.0",
   "private": true,
+  
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -20,7 +22,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "preinstall": "npx npm-force-resolutions"
+    "preinstall": "npx npm-force-resolutions",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "npm-force-resolutions": "^0.0.10"
   },
   "resolutions": {
