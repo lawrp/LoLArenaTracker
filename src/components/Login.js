@@ -55,6 +55,9 @@ const Login = () => {
             value={riotId}
             onChange={(e) => setRiotId(e.target.value.trim())}
             onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
+            autoComplete="off"
+            autoCorrect="off"
+            spellCheck="false"
           />
           <button className="submit-btn" onClick={handleLogin}>
             <img src={sendButton} alt="Submit" />
