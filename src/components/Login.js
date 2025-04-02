@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import API_BASE_URL from '../config'; // Import the base URL
+import sendButton from '../assets/sendButton.png'; // Import the image
+import gameplayVideo from '../assets/arena.mp4'; // Import your gameplay video
 
 const Login = () => {
   const [riotId, setRiotId] = useState('');
@@ -35,16 +37,30 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Login with Riot ID</h2>
-      <input
-        type="text"
-        placeholder="Enter Riot ID (name#tag)"
-        value={riotId}
-        onChange={(e) => setRiotId(e.target.value.trim())}
-      />
-      <button onClick={handleLogin}>SUBMIT</button>
-      {error && <div className="error">{error}</div>}
+    <div className="login-page">
+      {/* Background video */}
+      <video className="background-video" autoPlay loop muted>
+        <source src={gameplayVideo} type="video/mp4" />
+      </video>
+
+      <div className="title">League Arena Tracker</div>
+
+      <div className="login-container">
+        <h2>Enter your Riot ID</h2>
+        <div className="input-container">
+          <input
+            className="login-input"
+            type="text"
+            placeholder="Enter Riot ID (name#tag)"
+            value={riotId}
+            onChange={(e) => setRiotId(e.target.value.trim())}
+          />
+          <button className="submit-btn" onClick={handleLogin}>
+            <img src={sendButton} alt="Submit" />
+          </button>
+        </div>
+        {error && <div className="error">{error}</div>}
+      </div>
     </div>
   );
 };

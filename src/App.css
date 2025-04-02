@@ -26,16 +26,118 @@
 }
 
 
-.container {
-  background: none;
-  opacity: 1;
-  border-radius: 0;
-  padding: 0;
-  width: 100%;
-  max-width: none;
-  color: #FFD700;
+/* Background Video */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: blur(8px) brightness(50%);
+  z-index: -1;
 }
 
+/* Center the login container */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Glassmorphism Login Box */
+.login-container {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  color: #FFD700;
+  font-family: 'LeagueFont';
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Input and button in a row */
+.input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Glowing Input Field */
+.login-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  text-align: center;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+.login-input:focus {
+  border-color: #FFD700;
+  box-shadow: 0 0 10px #FFD700;
+  outline: none;
+}
+
+/* Animated Submit Button */
+.submit-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.submit-btn img {
+  height: 44px; /* Adjust to match input field */
+  width: auto;
+  transition: 0.3s ease-in-out;
+}
+
+.submit-btn:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px #FFD700);
+}
+
+/* Error Message */
+.error {
+  color: #FF4C4C;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.title {
+  position: absolute;
+  top: 10%;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+  font-family: 'LeagueFont', sans-serif;
+  animation: fadeIn 1.2s ease-in-out;
+}
 
 .home-page {
   width: 100%;
