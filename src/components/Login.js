@@ -29,7 +29,7 @@ const Login = () => {
       
       const updatedIds = [...new Set([userRiotId, ...savedRiotIDs])].slice(0, 5); // Keep max 5 recent IDs
       setSavedRiotIDs(updatedIds);
-      localStorage.setItem('savedRiotIds', JSON.stringify(updatedIds));
+      localStorage.setItem('savedRiotIDs', JSON.stringify(updatedIds));
 
       navigate('/home', { 
         state: { 
@@ -57,6 +57,21 @@ const Login = () => {
 
       <div className="login-container">
         <h2>Enter your Riot ID</h2>
+        
+        {/* Dropdown for saved Riot IDs */}
+        {savedRiotIDs.length > 0 && (
+          <select 
+            className="dropdown"
+            onChange={(e) => setRiotId(e.target.value)}
+            value={riotId}
+          >
+            <option value="">Select a saved Riot ID</option>
+            {savedRiotIDs.map((id, index) => (
+              <option key={index} value={id}>{id}</option>
+            ))}
+          </select>
+        )}
+
         <div className="input-container">
           <input
             className="login-input"
