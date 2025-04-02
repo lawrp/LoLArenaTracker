@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import API_BASE_URL from '../config'; // Import the base URL
@@ -7,8 +7,14 @@ import gameplayVideo from '../assets/arena.mp4'; // Import your gameplay video
 
 const Login = () => {
   const [riotId, setRiotId] = useState('');
+  const [savedRiotIDs, setSavedRiotIDs] = useState([]);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedIds = JSON.parse(localStorage.getItem('savedRiotIDs')) || [];
+    setSavedRiotIDs(storedIds);
+  }, []);
 
   const handleLogin = async () => {
     if (!riotId || !riotId.includes('#')) {
@@ -20,7 +26,11 @@ const Login = () => {
     try {
       const response = await axios.post(`${API_BASE_URL}/api/login`, { riotId });
       const { riotId: userRiotId, puuid, summonerLevel, profileIconId, challengeData } = response.data;
-      console.log('Challenge Data in Login:', challengeData);
+      
+      const updatedIds = [...new Set([userRiotId, ...savedRiotIDs])].slice(0, 5); // Keep max 5 recent IDs
+      setSavedRiotIDs(updatedIds);
+      localStorage.setItem('savedRiotIds', JSON.stringify(updatedIds));
+
       navigate('/home', { 
         state: { 
           riotId: userRiotId, 

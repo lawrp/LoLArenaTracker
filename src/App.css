@@ -139,6 +139,18 @@
   animation: fadeIn 1.2s ease-in-out;
 }
 
+.dropdown {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background: #0F1626;
+  color: #FFD700;
+  font-size: 16px;
+  text-align: center;
+}
+
 .home-page {
   width: 100%;
   min-height: 100vh;
