@@ -12,7 +12,7 @@ const Champions = () => {
   useEffect(() => {
     const fetchChampions = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/api/login`);
+        const response = await axios.get(`${API_BASE_URL}/api/champions`);
         setChampions(response.data);
       } catch (err) {
         setError(err.response?.data?.error || 'Failed to fetch champions.');
