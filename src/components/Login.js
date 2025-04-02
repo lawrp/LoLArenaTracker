@@ -54,6 +54,7 @@ const Login = () => {
             placeholder="Enter Riot ID (name#tag)"
             value={riotId}
             onChange={(e) => setRiotId(e.target.value.trim())}
+            onKeyDown={(e) => e.key === 'Enter' && handleLogin()}
           />
           <button className="submit-btn" onClick={handleLogin}>
             <img src={sendButton} alt="Submit" />
